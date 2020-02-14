@@ -38,13 +38,13 @@ class Products {
 class UI {
   displayProducts(products) {
     let result = "";
-    products.forEach(product =>{
+    products.forEach(product => {
       result += `
-<!--Single product-->
+      <!--Single product-->
         <article class="product">
           <div class="img-container">
             <img 
-            src= ${product.img}
+            src= ${product.image}
              alt="article1" 
              class="product-img" />
             <button class="bag-btn" data-id=${product.id}>
@@ -53,17 +53,19 @@ class UI {
             </button>
           </div>
           <h3>${product.title}</h3>
-          <h4>$${product.price}</h4>
+          <h4> €${product.price}</h4> 
         </article>
         <!--End of single product-->
-
       `;
-    })
+    });
+    productsDOM.innerHTML = result; //property set on productsDOM
   }
 }
 
-//local storage
-class storage {}
+//local storage (ensures all items in the carts are stored locally in browser even when page is refreshed)
+class storage {
+
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();

@@ -13,7 +13,7 @@
       "fields": {
         "title": "Oxford",
         "price": 250,
-        "image": { "fields": { "file": { "url": "./img/image2.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image5.jpeg" } } }
       }
     },
     {
@@ -21,7 +21,7 @@
       "fields": {
         "title": "Brogue",
         "price": 300,
-        "image": { "fields": { "file": { "url": "./img/image3.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image6.jpeg" } } }
       }
     },
     {
@@ -29,7 +29,7 @@
       "fields": {
         "title": "Monk",
         "price": 350,
-        "image": { "fields": { "file": { "url": "./img/image4.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image7.jpeg" } } }
       }
     },
     {
@@ -37,7 +37,7 @@
       "fields": {
         "title": "Loafers",
         "price": 400,
-        "image": { "fields": { "file": { "url": "./img/image5.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image10.jpeg" } } }
       }
     },
     {
@@ -45,7 +45,7 @@
       "fields": {
         "title": "Chukka",
         "price": 250,
-        "image": { "fields": { "file": { "url": "./img/image6.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image4.jpeg" } } }
       }
     },
     {
@@ -53,7 +53,7 @@
       "fields": {
         "title": "Chelsea",
         "price": 550,
-        "image": { "fields": { "file": { "url": "./img/image7.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image8.jpeg" } } }
       }
     },
     {
@@ -61,7 +61,7 @@
       "fields": {
         "title": "Boat",
         "price": 180,
-        "image": { "fields": { "file": { "url": "./img/image8.jpeg" } } }
+        "image": { "fields": { "file": { "url": "./img/image9.jpeg" } } }
       }
     }
   ]
