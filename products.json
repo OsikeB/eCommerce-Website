@@ -3,65 +3,65 @@
     {
       "sys": { "id": "1" },
       "fields": {
-        "title": "queen panel bed",
-        "price": 10.99,
-        "image": { "fields": { "file": { "url": "./images/product-1.jpeg" } } }
+        "title": "Derby",
+        "price": 200,
+        "image": { "fields": { "file": { "url": "./img/image1.jpeg" } } }
       }
     },
     {
       "sys": { "id": "2" },
       "fields": {
-        "title": "king panel bed",
-        "price": 12.99,
-        "image": { "fields": { "file": { "url": "./images/product-2.jpeg" } } }
+        "title": "Oxford",
+        "price": 250,
+        "image": { "fields": { "file": { "url": "./img/image2.jpeg" } } }
       }
     },
     {
       "sys": { "id": "3" },
       "fields": {
-        "title": "single panel bed",
-        "price": 12.99,
-        "image": { "fields": { "file": { "url": "./images/product-3.jpeg" } } }
+        "title": "Brogue",
+        "price": 300,
+        "image": { "fields": { "file": { "url": "./img/image3.jpeg" } } }
       }
     },
     {
       "sys": { "id": "4" },
       "fields": {
-        "title": "twin panel bed",
-        "price": 22.99,
-        "image": { "fields": { "file": { "url": "./images/product-4.jpeg" } } }
+        "title": "Monk",
+        "price": 350,
+        "image": { "fields": { "file": { "url": "./img/image4.jpeg" } } }
       }
     },
     {
       "sys": { "id": "5" },
       "fields": {
-        "title": "fridge",
-        "price": 88.99,
-        "image": { "fields": { "file": { "url": "./images/product-5.jpeg" } } }
+        "title": "Loafers",
+        "price": 400,
+        "image": { "fields": { "file": { "url": "./img/image5.jpeg" } } }
       }
     },
     {
       "sys": { "id": "6" },
       "fields": {
-        "title": "dresser",
-        "price": 32.99,
-        "image": { "fields": { "file": { "url": "./images/product-6.jpeg" } } }
+        "title": "Chukka",
+        "price": 250,
+        "image": { "fields": { "file": { "url": "./img/image6.jpeg" } } }
       }
     },
     {
       "sys": { "id": "7" },
       "fields": {
-        "title": "couch",
-        "price": 45.99,
-        "image": { "fields": { "file": { "url": "./images/product-7.jpeg" } } }
+        "title": "Chelsea",
+        "price": 550,
+        "image": { "fields": { "file": { "url": "./img/image7.jpeg" } } }
       }
     },
     {
       "sys": { "id": "8" },
       "fields": {
-        "title": "table",
-        "price": 33.99,
-        "image": { "fields": { "file": { "url": "./images/product-8.jpeg" } } }
+        "title": "Boat",
+        "price": 180,
+        "image": { "fields": { "file": { "url": "./img/image8.jpeg" } } }
       }
     }
   ]
