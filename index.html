@@ -25,22 +25,68 @@
         </div>
       </div>
     </nav>
-<!--end of navbar-->
-<!--hero-->
-<header class ="hero">
-<div class="banner">
-<h1 class="banner-title">Shoes Collections</h1>
-<button class= "banner-btn">Shop Now</button>
-</div>
-
-
-
-
-</header>
-
-
-
-<!--end of hero-->
+    <!--end of navbar-->
+    <!--hero-->
+    <header class="hero">
+      <div class="banner">
+        <h1 class="banner-title">Shoes Collections</h1>
+        <button class="banner-btn">Shop Now</button>
+      </div>
+    </header>
+    <!--end of hero-->
+    <!--Products-->
+    <section class="products">
+      <div class="section-title">
+        <h2>our products</h2>
+      </div>
+      <div class="products-center">
+        <!--Single product-->
+        <article class="product">
+          <div class="img-container">
+            <img src="./img/image1.jpeg" alt="article1" class="product-img" />
+            <button class="bag-btn" data-id="1">
+              <i class="fas fa-shopping-cart"></i>
+              Add to Cart
+            </button>
+          </div>
+          <h3>Executive Shoe</h3>
+          <h4>$200</h4>
+        </article>
+        <!--End of single product-->
+      </div>
+    </section>
+    <!--end of Products-->
+    <!---cart-->
+    <div class="cart-overlay">
+      <div class="cart">
+        <span class="close-cart">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <h2>Your Order(s)</h2>
+        <div class="cart-content">
+          <!--cart item-->
+          <div class="cart-item">
+            <img src="./img/image1.jpeg" alt="shop1" />
+            <div>
+              <h4>Executive Shoe</h4>
+              <h5>$200</h5>
+              <span class="remove-item">remove item</span>
+            </div>
+            <div>
+              <i class="fas fa-chevron-up"></i>
+              <p class="item-amount">1</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <!--end of cart item--->
+        </div>
+        <div class="cart-footer">
+          <h3>Your total is: $ <span class="cart-total">0</span></h3>
+          <button class="clear-cart banner-btn">Clear Cart</button>
+        </div>
+      </div>
+    </div>
+    <!---end of cart-->
 
     <script src="script.js"></script>
     <script src="./js/all.js"></script>
