@@ -12,6 +12,8 @@ const productsDOM = document.querySelector(".products-center");
 
 //cart
 let cart = [];
+//buttons
+let buttonsDOM = [];
 
 //getting the products
 class Products {
@@ -39,6 +41,7 @@ class UI {
   displayProducts(products) {
     let result = "";
     products.forEach(product => {
+      //copied from index.html and the needed section were made functional with `` and $
       result += `
       <!--Single product-->
         <article class="product">
@@ -61,7 +64,8 @@ class UI {
     productsDOM.innerHTML = result; //property set on productsDOM
   }
   getBagButtons() {
-    const buttons = [...document.querySelectorAll(".bag-btn")];
+    const buttons = [...document.querySelectorAll(".bag-btn")]; //spread operator is used so method can find button in the buttonDOM
+    buttonsDOM = buttons;
     buttons.forEach(button => {
       let id = button.dataset.id;
       let inCart = cart.find(item => item.id === id);
@@ -70,17 +74,66 @@ class UI {
         button.disable = true;
       }
       button.addEventListener("click", event => {
-        event.target.innerText = "In Cart";
+        event.target.innerText = "In Cart"; //when item has been selected by buyer, it displays "in cart"
         event.target.disable = true;
 
         //get product from products
+        let cartItem = {
+          ...storage.getProduct(id), //this is added to the let cart =[] above
+          amount: 1
+        };
+
         //add product to cart
+        cart = [...cart, cartItem]; //ensures product are added to cart
+
         //save cart in local storage
+        storage.saveCart(cart); //ensures items in cart are saved in local storage
+
         //set cart values
+        this.setCartValues(cart);
+
         //display cart items
+        this.addCartItem(cartItem);
+
         //show the cart
+        this.showCart();
       });
     });
+  }
+
+  //to set cart values and ensure the right price is calculated when selected
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+    cart.map(item => {
+      tempTotal += item.price * item.amount;
+      itemsTotal += item.amount;
+    });
+
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(2)); //ensures prices are rounded down to 2decimal places
+    cartItems.innerText = itemsTotal;
+  }
+  addCartItem(item) {
+    //we create a div and add to it the class("cart-item") from the index.html, that way we get get the style
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerHTML = `<img src=${item.image} alt="shop1" />
+            <div>
+              <h4>${item.title}</h4>
+              <h5>€${item.price}</h5>
+              <span class="remove-item" data-id=${item.id}>remove item</span>
+            </div>
+            <div>
+              <i class="fas fa-chevron-up" data-id=${item.id}></i>
+              <p class="item-amount">${item.amount}</p>
+              <i class="fas fa-chevron-down" data-id=${item.id}></i>
+            </div>`;
+    cartContent.appendChild(div); //this adds the above division
+  }
+  //showing cart
+  showCart() {
+    //In our CSS, property of visibilty was set as hidden in the class .cart-overlay, but now shown with class transparentBcg
+    cartOverlay.classList.add("transparentBcg");
   }
 }
 
@@ -88,6 +141,13 @@ class UI {
 class storage {
   static saveProducts(products) {
     localStorage.setItem("products", JSON.stringify(products)); //an inbuilt JS method
+  }
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem("products"));
+    return products.find(product => product.id === id);
+  }
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 }
 

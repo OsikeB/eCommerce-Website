@@ -4,7 +4,7 @@
       "sys": { "id": "1" },
       "fields": {
         "title": "Derby",
-        "price": 200,
+        "price": 199.99,
         "image": { "fields": { "file": { "url": "./img/image1.jpeg" } } }
       }
     },
@@ -12,7 +12,7 @@
       "sys": { "id": "2" },
       "fields": {
         "title": "Oxford",
-        "price": 250,
+        "price": 249.99,
         "image": { "fields": { "file": { "url": "./img/image5.jpeg" } } }
       }
     },
@@ -20,7 +20,7 @@
       "sys": { "id": "3" },
       "fields": {
         "title": "Brogue",
-        "price": 300,
+        "price": 299.99,
         "image": { "fields": { "file": { "url": "./img/image6.jpeg" } } }
       }
     },
@@ -28,7 +28,7 @@
       "sys": { "id": "4" },
       "fields": {
         "title": "Monk",
-        "price": 350,
+        "price": 349.99,
         "image": { "fields": { "file": { "url": "./img/image7.jpeg" } } }
       }
     },
@@ -36,7 +36,7 @@
       "sys": { "id": "5" },
       "fields": {
         "title": "Loafers",
-        "price": 400,
+        "price": 399.99,
         "image": { "fields": { "file": { "url": "./img/image10.jpeg" } } }
       }
     },
@@ -44,7 +44,7 @@
       "sys": { "id": "6" },
       "fields": {
         "title": "Chukka",
-        "price": 250,
+        "price": 249.99,
         "image": { "fields": { "file": { "url": "./img/image4.jpeg" } } }
       }
     },
@@ -52,7 +52,7 @@
       "sys": { "id": "7" },
       "fields": {
         "title": "Chelsea",
-        "price": 550,
+        "price": 549.99,
         "image": { "fields": { "file": { "url": "./img/image8.jpeg" } } }
       }
     },
@@ -60,7 +60,7 @@
       "sys": { "id": "8" },
       "fields": {
         "title": "Boat",
-        "price": 180,
+        "price": 179.99,
         "image": { "fields": { "file": { "url": "./img/image9.jpeg" } } }
       }
     }
