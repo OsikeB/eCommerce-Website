@@ -162,13 +162,39 @@ class UI {
     ClearCartBtn.addEventListener("click", () => {
       this.clearCart();
     });
+
+    // cart functionality
+    cartContent.addEventListener("click", event => {
+      if (event.target.classList.contains("remove-item")) {
+        let removeItem = event.target;
+        let id = removeItem.dataset.id;
+        cartContent.removeChild(removeItem.parentElement.parentElement); //removing from the DOM
+        this.removeItem(id);
+      } else if (event.target.classList.contains("fa-chevron-up")) {
+        let addAmount = event.target;
+        let id = addAmount.dataset.id;
+        let tempItem = cart.find(item => item.id === id);
+        tempItem.amount = tempItem.amount + 1;
+        storage.saveCart(cart);
+        this.setCartValues(cart);
+        addAmount.nextElementSibling.innerHTML = tempItem.amount;
+      } else if (event.target.classList.contains("fa-chevron-down")) {
+        let lowerAmount = event.target;
+        let id = lowerAmount.dataset.id;
+        let tempItem = cart.find(item => item.id === id);
+        tempItem.amount = tempItem.amount - 1;
+        if (tempItem.amount > 0) {
+          storage.saveCart(cart);
+          this.setCartValues(cart);
+          lowerAmount.previousElementSibling.innerHTML = tempItem.amount;
+        } else {
+          cartContent.removeChild(lowerAmount.parentElement.parentElement);
+          this.removeItem(id);
+        }
+      }
+    });
   }
 
-  // cart functionality
-
-
-
-  
   clearCart() {
     //first we get all the ids of the item in the cart & direct them to be removed with a methof of remove item
     let cartItems = cart.map(item => item.id);
@@ -178,7 +204,7 @@ class UI {
       cartContent.removeChild(cartContent.children[0]);
     }
 
-    this.hide();
+    this.hideCart();
   }
   removeItem(id) {
     cart = cart.filter(item => item.id !== id); //return only when the item in the cart doesn't have this id
