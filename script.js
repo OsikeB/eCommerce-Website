@@ -132,8 +132,28 @@ class UI {
   }
   //showing cart
   showCart() {
-    //In our CSS, property of visibilty was set as hidden in the class .cart-overlay, but now shown with class transparentBcg
+    //In our CSS, property of visibilty was set as hidden in the class .cart-overlay & .cart, but now shown with class transparentBcg
     cartOverlay.classList.add("transparentBcg");
+    cartDOM.classList.add("showCart");
+  }
+
+  //this ensures our cart is dynamic
+  //moment cart loads, values should be asigned from the storage
+  setupAPP() {
+    cart = storage.getCart();
+    this.setCartValues(cart);
+    this.populateCart(cart);
+    cartBtn.addEventListener("click", this.showCart);
+    CloseCartBtn.addEventListener("click", this.hideCart);
+  }
+
+  populateCart(cart) {
+    cart.forEach(item => this.addCartItem(item));
+  }
+  //hidding cart
+  hideCart() {
+    cartOverlay.classList.remove("transparentBcg");
+    cartDOM.classList.remove("showCart");
   }
 }
 
@@ -149,11 +169,20 @@ class storage {
   static saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+  static getCart() {
+    //ensures local storage is first checked and items there are returned, if not an empty cart is returned
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   const products = new Products();
+
+  //setup app
+  ui.setupAPP();
 
   // get all products
   products
