@@ -1,4 +1,11 @@
-//selecting element
+const client = contentful.createClient({
+  // This is the space ID. A space is like a project folder in Contentful terms
+  space: "wboevhrwmerf",
+  // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
+  accessToken: "w_HxtYvnUA35Wmy39Nr1Q6rGDqRfuOVJO8epc0lpVoI"
+});
+
+//selecting element (variables)
 
 const cartBtn = document.querySelector(".cart-btn");
 const CloseCartBtn = document.querySelector(".close-cart");
@@ -19,11 +26,18 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
+      //contentful code
+      let contentful = await client.getEntries({
+        content_type: "luxuryshoeProducts"
+      });
+
+      /* commented out after contentful was added
       let result = await fetch("products.json"); //file is in the same folder
       let data = await result.json();
-      let products = data.items; // reference to the product.json file
+      */
+      let products = contentful.items; // reference to the product.json file(content.item), but later updated to contentful.item
       products = products.map(item => {
-        //.map used to sorth through the array
+        //.map used to sort through the array (in product.json file)
         const { title, price } = item.fields; //used to traced their location on the products.json file
         const { id } = item.sys; //used to traced their location on the products.json file
         const image = item.fields.image.fields.file.url; //used to traced their location on the products.json file
@@ -199,7 +213,6 @@ class UI {
     //first we get all the ids of the item in the cart & direct them to be removed with a methof of remove item
     let cartItems = cart.map(item => item.id);
     cartItems.forEach(id => this.removeItem(id));
-    console.log(cartContent.children);
     while (cartContent.children.length > 0) {
       cartContent.removeChild(cartContent.children[0]);
     }
