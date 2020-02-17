@@ -6,7 +6,7 @@
   accessToken: "w_HxtYvnUA35Wmy39Nr1Q6rGDqRfuOVJO8epc0lpVoI"
 });*/
 
-//selecting element (variables)
+//Declaring our varaiables
 const cartBtn = document.querySelector(".cart-btn");
 const CloseCartBtn = document.querySelector(".close-cart");
 const ClearCartBtn = document.querySelector(".clear-cart");
@@ -17,34 +17,36 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
-//cart
+//cart item, has to be a variable with an empty array
 let cart = [];
+
 //buttons
 let buttonsDOM = [];
 
-//getting the products
+//getting the products from product.json or from contentful
+//we set first a method
 class Products {
   async getProducts() {
     try {
-
       /* commented out as we are deploying from local storage not contentful
       //contentful code
       let contentful = await client.getEntries({
         content_type: "luxuryshoeProducts"
       });*/
 
-      
       let result = await fetch("products.json"); //file is in the same folder
-      let data = await result.json();
+      let data = await result.json(); //this ensures json data used on the fetch is returned
       let products = data.items; // reference to the product.json file(data.items), but later updated to contentful.item
 
-
       //commented out as we are deploying from local storage not contentful
-      /*let products = contentful.items;*/ products = products.map(item => {
+      /*let products = contentful.items;*/
+      products = products.map(item => {
+        //a better way to return the .son file as object and later set properties on it
         //.map used to sort through the array (in product.json file)
         const { title, price } = item.fields; //used to traced their location on the products.json file
         const { id } = item.sys; //used to traced their location on the products.json file
         const image = item.fields.image.fields.file.url; //used to traced their location on the products.json file
+        //used to return object
         return { title, price, id, image };
       });
       return products;
@@ -54,12 +56,15 @@ class Products {
   }
 }
 
-// displaying the products, everything displayed on the webpage
+// This class is resp for displaying the products, everything displayed on the webpage
+// getting items returned from class Products or from local storage
 class UI {
   displayProducts(products) {
     let result = "";
+    //array method to loop over the product array
     products.forEach(product => {
       //copied from index.html and the needed section were made functional with `` and $
+      //we used temperate literals `` to access the properties
       result += `
       <!--Single product-->
         <article class="product">
@@ -79,18 +84,21 @@ class UI {
         <!--End of single product-->
       `;
     });
-    productsDOM.innerHTML = result; //property set on productsDOM
+
+    productsDOM.innerHTML = result; //property set on productsDOM to equal result on the class UI
   }
+  //after displaying product, we make buttons functional
   getBagButtons() {
     const buttons = [...document.querySelectorAll(".bag-btn")]; //spread operator is used so method can find button in the buttonDOM
     buttonsDOM = buttons;
     buttons.forEach(button => {
-      let id = button.dataset.id;
-      let inCart = cart.find(item => item.id === id);
+      let id = button.dataset.id; //id from data-id will be used to retrieve info about product
+      let inCart = cart.find(item => item.id === id); //find the item in the cart, if it matches button
       if (inCart) {
-        button.innerText = "In Cart";
-        button.disable = true;
+        button.innerText = "In Cart"; //button changes to IN CART
+        button.disable = true; //button is disabled
       }
+      //if Item is not in the cart, this functions ll be executed
       button.addEventListener("click", event => {
         event.target.innerText = "In Cart"; //when item has been selected by buyer, it displays "in cart"
         event.target.disable = true;
@@ -101,14 +109,16 @@ class UI {
           amount: 1
         };
 
+        //methods section
+
         //add product to cart
-        cart = [...cart, cartItem]; //ensures product are added to cart
+        cart = [...cart, cartItem]; //ensures product are added to cart array which was first defined above
 
         //save cart in local storage
         storage.saveCart(cart); //ensures items in cart are saved in local storage
 
         //set cart values
-        this.setCartValues(cart);
+        this.setCartValues(cart); //when we click, item number changes
 
         //display cart items
         this.addCartItem(cartItem);
@@ -127,7 +137,7 @@ class UI {
       tempTotal += item.price * item.amount;
       itemsTotal += item.amount;
     });
-
+    //toFixed returns string but to get a number, we use parseFloat
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2)); //ensures prices are rounded down to 2decimal places
     cartItems.innerText = itemsTotal;
   }
@@ -135,7 +145,8 @@ class UI {
     //we create a div and add to it the class("cart-item") from the index.html, that way we get get the style
     const div = document.createElement("div");
     div.classList.add("cart-item");
-    div.innerHTML = `<img src=${item.image} alt="shop1" />
+    // temperate literals was used again
+    div.innerHTML = `<img src=${item.image} alt="shop1" /> 
             <div>
               <h4>${item.title}</h4>
               <h5>€${item.price}</h5>
@@ -148,6 +159,7 @@ class UI {
             </div>`;
     cartContent.appendChild(div); //this adds the above division
   }
+
   //showing cart
   showCart() {
     //In our CSS, property of visibilty was set as hidden in the class .cart-overlay & .cart, but now shown with class transparentBcg
@@ -239,10 +251,11 @@ class UI {
 //local storage (ensures all items in the carts are stored locally in browser even when page is refreshed)
 class storage {
   static saveProducts(products) {
+    //static method will be reused
     localStorage.setItem("products", JSON.stringify(products)); //an inbuilt JS method
   }
   static getProduct(id) {
-    let products = JSON.parse(localStorage.getItem("products"));
+    let products = JSON.parse(localStorage.getItem("products")); //this returns the array in the local storage
     return products.find(product => product.id === id);
   }
   static saveCart(cart) {
@@ -256,7 +269,9 @@ class storage {
   }
 }
 
+//event listener created
 document.addEventListener("DOMContentLoaded", () => {
+  //we create instance for both UI & product class
   const ui = new UI();
   const products = new Products();
 
@@ -264,11 +279,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ui.setupAPP();
 
   // get all products
+  //Here we run both methods .getProducts & displayProducts on product instance
   products
     .getProducts()
     .then(products => {
       ui.displayProducts(products);
-      storage.saveProducts(products);
+      storage.saveProducts(products); //bcos this is a static method,we don't need an instance, we can just use the class
     })
     .then(() => {
       ui.getBagButtons();
