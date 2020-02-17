@@ -1,12 +1,12 @@
-const client = contentful.createClient({
+//commented out as we are deploying from local storage not contentful
+/*const client = contentful.createClient({
   // This is the space ID. A space is like a project folder in Contentful terms
   space: "wboevhrwmerf",
   // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
   accessToken: "w_HxtYvnUA35Wmy39Nr1Q6rGDqRfuOVJO8epc0lpVoI"
-});
+});*/
 
 //selecting element (variables)
-
 const cartBtn = document.querySelector(".cart-btn");
 const CloseCartBtn = document.querySelector(".close-cart");
 const ClearCartBtn = document.querySelector(".clear-cart");
@@ -26,17 +26,21 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
+
+      /* commented out as we are deploying from local storage not contentful
       //contentful code
       let contentful = await client.getEntries({
         content_type: "luxuryshoeProducts"
-      });
+      });*/
 
-      /* commented out after contentful was added
+      
       let result = await fetch("products.json"); //file is in the same folder
       let data = await result.json();
-      */
-      let products = contentful.items; // reference to the product.json file(content.item), but later updated to contentful.item
-      products = products.map(item => {
+      let products = data.items; // reference to the product.json file(data.items), but later updated to contentful.item
+
+
+      //commented out as we are deploying from local storage not contentful
+      /*let products = contentful.items;*/ products = products.map(item => {
         //.map used to sort through the array (in product.json file)
         const { title, price } = item.fields; //used to traced their location on the products.json file
         const { id } = item.sys; //used to traced their location on the products.json file
