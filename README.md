@@ -20,4 +20,4 @@ The website is hosted by netflify </br>
 
 <a href="https://luxury-shoes.netlify.com/"> shoe shop</a>
 
-Pictures credit https://www.pexels.com/
+Pictures credit: https://www.pexels.com/
