@@ -153,9 +153,9 @@ class UI {
               <span class="remove-item" data-id=${item.id}>remove item</span>
             </div>
             <div>
-              <i class="fas fa-chevron-up" data-id=${item.id}></i>
+              <i class="fas fa-chevron-up fa-2x" data-id=${item.id}></i>
               <p class="item-amount">${item.amount}</p>
-              <i class="fas fa-chevron-down" data-id=${item.id}></i>
+              <i class="fas fa-chevron-down fa-2x" data-id=${item.id}></i> <!---fa-2x was used to make icon bigger--->
             </div>`;
     cartContent.appendChild(div); //this adds the above division
   }
