@@ -17,6 +17,7 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
+
 //cart item, has to be a variable with an empty array
 let cart = [];
 
@@ -226,7 +227,7 @@ class UI {
   }
 
   clearCart() {
-    //first we get all the ids of the item in the cart & direct them to be removed with a methof of remove item
+    //first we get all the ids of the item in the cart & direct them to be removed with a method of remove item
     let cartItems = cart.map(item => item.id);
     cartItems.forEach(id => this.removeItem(id));
     while (cartContent.children.length > 0) {

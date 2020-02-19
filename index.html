@@ -87,6 +87,58 @@
         </div>
         <div class="cart-footer">
           <h3>Your total is: € <span class="cart-total">0</span></h3>
+
+          <div id="paypal-button"></div>
+
+          <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+          <!---Paypal checkout integration-->
+          <script>
+            paypal.Button.render(
+              {
+                // Configure environment
+                env: "sandbox",
+                client: {
+                  sandbox:
+                    "AYyzq7JBijqhO_CqtAyFceBTYuZRZH7tAtQa3nhOtyKSH3wtjJIzDy5hUWoMEum3lu8WxMvsp2d6vbM2", //SANDBOX API CREDENTIALS gotten from my client ID
+                  production: "demo_production_client_id"
+                },
+                // Customize button (optional)
+                locale: "en_US",
+                style: {
+                  size: "small",
+                  color: "gold",
+                  shape: "pill"
+                },
+
+                // Enable Pay Now checkout flow (optional)
+                commit: true,
+
+                // Set up a payment
+                payment: function(data, actions) {
+                  return actions.payment.create({
+                    transactions: [
+                      {
+                        amount: {
+                          total: cartTotal.innerText, //total payable amount
+                          currency: "EUR"
+                        }
+                      }
+                    ]
+                  });
+                },
+                // Execute the payment
+                onAuthorize: function(data, actions) {
+                  return actions.payment.execute().then(function() {
+                    // Show a confirmation message to the buyer
+                    window.alert("Thank you for your purchase!");
+                  });
+                }
+              },
+              "#paypal-button"
+            );
+          </script>
+
           <button class="check-out banner-btn2">Check Out</button>
           <button class="clear-cart banner-btn1">Clear Cart</button>
         </div>
@@ -114,6 +166,7 @@
         </div>
       </div>
     </footer>
+
     <!-----Link for contentful, must be above script.js-->
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
     <!-----Link for Jquery-->
