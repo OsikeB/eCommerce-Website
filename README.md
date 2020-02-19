@@ -2,12 +2,13 @@
 
 <h2>Introduction</h2>
 
-This website is built with main focus on the shopping cart. Customers will be able to add, remove and also clear products from the cart with a click of button
+Customers will be able to add, remove and also clear items selected in the cart with a click of button. Paypal checkout was also integrated for customers to purchase their product of choice
 
 <h2>Technologies Used</h2>
 
-Vanilla Javascript with no frame works, html and CSS. The footer was created with bootstrap and font awesome
-The website has been deployed twice. The first relied on my local storage area for the products.json which included the APIs and the second was deloyed because data management was done through contentful. </br>
+Vanilla Javascript with no frame works, HTML5 and CSS3. The footer was created with bootstrap and font awesome
+The website has been deployed twice. The first relied on my local storage area for the products.json which included the APIs and a duplicate website was also deloyed because data management is handled via contentful. </br>
+Paypal sandbox was also created, so users can purchase item and pay via paypal. </br>
 The website is hosted by netflify </br>
 
 
