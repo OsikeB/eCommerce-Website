@@ -33,11 +33,11 @@ body {
 .navbar-center {
   width: 100%;
   max-width: 1170px;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
 }
 .nav-icon {
   font-size: 1.5rem;
