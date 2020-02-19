@@ -13,7 +13,7 @@ The website is hosted by netflify </br>
 
 <h3>contentful storage</h3>
 
-<a href="https://kazeem-shoeshop.netlify.com/"> shoe shop</a>
+<a href="https://kazeem-shoes.netlify.com/"> shoe shop</a>
 
 
 <h3>local storage</h3>
