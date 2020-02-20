@@ -17,7 +17,6 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
-
 //cart item, has to be a variable with an empty array
 let cart = [];
 
@@ -116,7 +115,7 @@ class UI {
         cart = [...cart, cartItem]; //ensures product are added to cart array which was first defined above
 
         //save cart in local storage
-        storage.saveCart(cart); //ensures items in cart are saved in local storage
+        storage.saveCart(cart); //ensures items in cart are saved in local storage even when page is refrshed
 
         //set cart values
         this.setCartValues(cart); //when we click, item number changes
