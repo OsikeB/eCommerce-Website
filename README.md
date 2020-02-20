@@ -2,7 +2,7 @@
 
 <h2>Introduction</h2>
 
-Customers will be able to add, remove and also clear items selected in the cart with a click of button. Paypal checkout was also integrated for customers to purchase their product of choice
+Customers are able to Login, add, remove and also clear items selected in the cart with a click of button. Paypal checkout has been integrated for customers to purchase their product of choice
 
 <h2>Technologies Used</h2>
 
