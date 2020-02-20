@@ -23,7 +23,7 @@ body {
 .navbar {
   position: sticky; /* ensures nav bar sticks to the top*/
   top: 0px;
-  height: 99px;
+  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -54,6 +54,11 @@ body {
   padding: 0 5px;
   border-radius: 30%;
   color: var(--mainBlack);
+}
+
+#image {
+  padding-left: 16rem;
+  padding-bottom: 10px;
 }
 /* --------------- End of Navbar ---------------- */
 /* --------------- Hero ---------------- */
@@ -91,6 +96,23 @@ body {
   background: transparent;
   color: rgb(138, 81, 77);
 }
+
+.banner-btn4 {
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: rgb(138, 81, 77);
+  color: black;
+  border: 2px solid rgb(184, 176, 176);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.banner-btn4:hover {
+  background: transparent;
+  color: rgb(224, 209, 108);
+}
+
 /* --------------- End of Hero ---------------- */
 /* --------------- Products ---------------- */
 
