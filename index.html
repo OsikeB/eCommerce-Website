@@ -20,10 +20,13 @@
           <i class="fas fa-bars fa-2x"></i>
         </span>
         <div id="image"><img src="./img/logo.svg" alt="shop-logo" /></div>
-        <div class="login">
-          <a href="#"><button class="banner-btn4">Login</button> </a>
-        </div>
 
+        <button id="myLogin" class="banner-btn4">Login</button>
+        <script type="text/javascript">
+          document.getElementById("myLogin").onclick = function() {
+            window.location = "./signin/form.html";
+          };
+        </script>
         <div class="cart-btn">
           <span class="nav-icon ">
             <i class="fas fa-cart-plus fa-2x"></i>
