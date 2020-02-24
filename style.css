@@ -57,7 +57,7 @@ body {
 }
 
 #image {
-  padding-left: 22rem;
+  padding-left: 24rem;
   padding-bottom: 10px;
 }
 /* --------------- End of Navbar ---------------- */
@@ -80,6 +80,15 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 3rem;
+}
+
+#paypal-button {
+  position: relative;
+  right: -62px;
+  bottom: -46px;
+
+  opacity: 0;
+  width: 29%;
 }
 .banner-btn {
   padding: 1rem 3rem;
@@ -106,6 +115,7 @@ body {
   border: 2px solid rgb(184, 176, 176);
   transition: var(--mainTransition);
   cursor: pointer;
+  padding: 0.5rem 0.5rem;
 }
 
 .banner-btn4:hover {
