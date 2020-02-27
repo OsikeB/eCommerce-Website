@@ -17,6 +17,7 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
+
 //cart item, has to be a variable with an empty array
 let cart = [];
 
@@ -193,6 +194,12 @@ class UI {
       this.clearCart();
     });
 
+   
+      function myFunction() {
+        document.getElementById("paypal-button");
+    }
+          
+
     // cart functionality
     cartContent.addEventListener("click", event => {
       if (event.target.classList.contains("remove-item")) {
@@ -235,6 +242,7 @@ class UI {
 
     this.hideCart();
   }
+
   removeItem(id) {
     cart = cart.filter(item => item.id !== id); //return only when the item in the cart doesn't have this id
     this.setCartValues(cart);

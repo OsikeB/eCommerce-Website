@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title> Sign Up Page Page </title>
+</head>
+<body>
 	<style>
-		body{
+body{
     min-height: calc(100vh - 60px);
-    background: url("./img/image33.jpeg") center/cover no-repeat;
+    background: url("./img/image33.jpeg")center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,10 +24,10 @@ form{
     text-align: left;
     background-color: rgb(171, 255, 245, 0);
     width: 90%;
-    height: 420px;
+    height: 580px;
     border: 1px solid rgb(140, 49, 107);
 }
-input[type=text], input[type=password]{
+input[type=name], input[type=password], input[type=email], input[type=password2]{
 width:100%; 
 padding:15px 10px; 
 margin:2px 0;
@@ -61,42 +64,39 @@ border-radius:50%;
 padding:10px; 
 color:rgb(138, 81, 77); 
 }
-#item2{
-background-color: grey;
-}
-#item3{
-float:right; padding:6px;
-}
-#item3 a{text-decoration: none}
+
+
+
+
+
 
 
 	</style>
-<title> Sign In Page Page </title>
-</head>
-<body>
 	<div id ="item0">
-<form action ="/action_page.php">
+<form action="/login" method="POST">
 	<div id="mylogo"><img src= "./img/logo.svg" alt="crest">
 	</div>
 	<div id="item1">
-		<label><b>Username/Email</b></label>
-		<input type="text" placeholder="Username/Email" name="uname" required>
 
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Password" name="psw" required>
+		<label for="name">Name</label>
+		<input type="name" id="name" placeholder="Enter Name" name="name" required>
 
-		<button type="submit">Login</button>
-		<input type="checkbox" checked="checked"> Remember Me
+		<label for="email">Email</label>
+		<input type="email" id="email" placeholder="Enter Email" name="email" required>
+
+		<label for ="password">Password</label>
+		<input type="password" id="password" placeholder="Create Password" name="password" required>
+
+	<label for="password2">Confirm Password</label>
+	<input type="password2" id="password2" placeholder="Confirm Password" name="password2" required>
 		
+		<button type="submit">Register</button>
+		
+	</form>
+	<span id="item3">Do you have an account?<a href="#">Login</a></span>
 	</div>
-
-	<div id="item2">
-		<button type="button" class="cancelbtn">Cancel</button>
-		<span id="item3"><a href="#">Forgot password?</a></span>
 	</div>
-</form>
-</div>
-</body>
+	</body>
 
 
 

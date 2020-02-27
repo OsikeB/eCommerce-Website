@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Sign Up Page Page </title>
-</head>
-<body>
 	<style>
-body{
+		body{
     min-height: calc(100vh - 60px);
-    background: url("./img/image33.jpeg")center/cover no-repeat;
+     background: url("./img/image33.jpeg")center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,11 +20,12 @@ form{
     margin-top: 120px;
     text-align: left;
     background-color: rgb(171, 255, 245, 0);
-    width: 90%;
-    height: 430px;
+    width: 99%;
+    height: 420px;
     border: 1px solid rgb(140, 49, 107);
+	
 }
-input[type=text], input[type=password]{
+input[type=name], input[type=password], input[type=email]{
 width:100%; 
 padding:15px 10px; 
 margin:2px 0;
@@ -64,38 +62,52 @@ border-radius:50%;
 padding:10px; 
 color:rgb(138, 81, 77); 
 }
-
-
-
+#item2{
+background-color: grey;
+}
 
 
 
 
 	</style>
-	<div id ="item0">
-<form action="/login" method="POST">
-	<div id="mylogo"><img src= "./img/logo.svg" alt="crest">
-	</div>
-	<div id="item1">
+<title> Sign In Page Page </title>
+</head>
+<body>
+	<div id="item0">
+		<form action="/login" method="POST">
+			<div id="mylogo"><img src="./img/logo.svg" alt="crest">
+			</div>
+		<label for="email">Email</label>
+		<input type="email" id="email" placeholder="Enter Email" name="email" required>
 
-		<label><b>Name</b></label>
-		<input type="text" placeholder="Name" name="uname" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" placeholder="Enter Password" name="password" required>
 
-		<label><b>Username/Email</b></label>
-		<input type="text" placeholder="Username/Email" name="uname" required>
-
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Password" name="psw" required>
-		
-		<button type="submit">Register</button>
-		
+		<button type="submit">Login</button>
+		<input type="checkbox" checked="checked"> Remember Me
 	</form>
+
+	<div id="item2">
+		<span id="item3">No Account? <a href="#">Register here</a></span>
+			
+		</script>
 	</div>
-	</div>
-	</body>
+</div>
+</div>
+</body>
 
 
 
+
+			
+
+			
+
+		
+
+			
+
+			
 
 
 
