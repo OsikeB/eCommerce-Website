@@ -28,7 +28,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 
 // Route to serve index.html
-app.get("/home",  (req, res)=>{
+app.get("/",  (req, res)=>{
   res.sendFile(__dirname + "/index.html");
 })
 
