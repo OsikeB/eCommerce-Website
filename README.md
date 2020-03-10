@@ -1,15 +1,38 @@
-# Luxury Shoes
+# Project Name
+>eCommerce Website
 
-<h2>Introduction</h2>
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Contact](#contact)
 
-Customers are able to Login, add, remove and also clear items selected in the cart with a click of button. Paypal checkout has been integrated for customers to purchase their product of choice. Nodejs was used for the backend and athentication done with Passportjs
-
-<h2>Technologies Used</h2>
-
-Javascript, Nodejs, MongoDB, Mongoose, Passportjs, Expressjs, ExpressLayout, Ejs, Bcryptjs, HTML and CSS. Footer, Login & LogOut pages designed with Bootstrap and Font Awesome. </br>
-Both local storage area and contentful were used for data management. </br>
-Paypal sandbox was also created to implement paypal checkout. </br>
-The website is hosted via netflify </br>
+## General info
+eCommerce website using Vanilla Javascript, CSS & HTML on the front end. NodeJS & ExpressJS on the backend while MongoDB served
+as the database. Login and Logout authentication done with passportJS & Bcryptjs. Paypal sandbox was also created to implement paypal checkout.
+The APP was deployed via heroku
 
 
+## Technologies
+* ejs": - version 3.0.1",
+* express: - version 4.17.1",
+* express-ejs-layouts: - version 2.5.0",
+* express-session:- version 1.17.0",
+* mongoose: - version 5.9.2",
+* passport: - version 0.4.1",
+* passport-local: - version 1.0.0"
+* react-scripts - version 3.4.0 
+* bootstrap" - version 4.4.1
+* bcryptsjs - version 2.4.3
+* connect-flash - version 0.1.1
 
+
+## Setup
+IDE used was Visual Studio Code. All necessary dependencies were installed, as seen in package.json. And deployment was via heroku
+
+## Status
+Project is completed but still room for improvement 
+
+
+## Contact
+Created by [@ogbeche77](ogbeche77@yahoo.com)
