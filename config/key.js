@@ -1,1 +1,1 @@
-module.exports = { MongoURI: "INSERT_MONGODB_URL"}
+module.exports = { MongoURI: process.env.MONGODB_URI};
