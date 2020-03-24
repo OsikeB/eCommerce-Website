@@ -5,6 +5,9 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
 const path = require("path");
+require("dotenv").config();
+
+
 
 
 const app = express();
