@@ -1,67 +1,130 @@
 {
-  "items": [
-    {
-      "sys": { "id": "1" },
+  "items": [{
+      "sys": {
+        "id": "1"
+      },
       "fields": {
         "title": "Derby",
         "price": 199.99,
-        "image": { "fields": { "file": { "url": "./img/image1.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image1.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "2" },
+      "sys": {
+        "id": "2"
+      },
       "fields": {
         "title": "Oxford",
         "price": 249.99,
-        "image": { "fields": { "file": { "url": "./img/image5.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image5.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "3" },
+      "sys": {
+        "id": "3"
+      },
       "fields": {
         "title": "Brogue",
         "price": 299.99,
-        "image": { "fields": { "file": { "url": "./img/image6.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image6.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "4" },
+      "sys": {
+        "id": "4"
+      },
       "fields": {
         "title": "Monk",
         "price": 349.99,
-        "image": { "fields": { "file": { "url": "./img/image7.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image7.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "5" },
+      "sys": {
+        "id": "5"
+      },
       "fields": {
         "title": "Loafers",
         "price": 399.99,
-        "image": { "fields": { "file": { "url": "./img/image10.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image10.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "6" },
+      "sys": {
+        "id": "6"
+      },
       "fields": {
         "title": "Chukka",
         "price": 249.99,
-        "image": { "fields": { "file": { "url": "./img/image4.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image4.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "7" },
+      "sys": {
+        "id": "7"
+      },
       "fields": {
         "title": "Chelsea",
         "price": 549.99,
-        "image": { "fields": { "file": { "url": "./img/image8.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image8.jpeg"
+            }
+          }
+        }
       }
     },
     {
-      "sys": { "id": "8" },
+      "sys": {
+        "id": "8"
+      },
       "fields": {
         "title": "Boat",
         "price": 179.99,
-        "image": { "fields": { "file": { "url": "./img/image9.jpeg" } } }
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./img/image9.jpeg"
+            }
+          }
+        }
       }
     }
   ]
