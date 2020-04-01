@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 :root {
-  --primaryColor: rgb(255, 255, 3);
+  --primaryColor: rgb(255, 255, 4);
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   color: var(--mainBlack);
   background: var(--mainWhite);
@@ -21,7 +23,8 @@ body {
 
 /* --------------- Navbar ---------------- */
 .navbar {
-  position: sticky; /* ensures nav bar sticks to the top*/
+  position: sticky;
+  /* ensures nav bar sticks to the top*/
   top: 0px;
   height: 100px;
   width: 100%;
@@ -30,6 +33,7 @@ body {
   background: rgb(138, 81, 77);
   z-index: 1;
 }
+
 .navbar-center {
   width: 100%;
   max-width: 1170px;
@@ -39,13 +43,16 @@ body {
   justify-content: space-between;
   padding: 0 1rem;
 }
+
 .nav-icon {
   font-size: 1.5rem;
 }
+
 .cart-btn {
   position: relative;
   cursor: pointer;
 }
+
 .cart-items {
   position: absolute;
   top: -8px;
@@ -60,6 +67,7 @@ body {
   padding-left: 24rem;
   padding-bottom: 10px;
 }
+
 /* --------------- End of Navbar ---------------- */
 /* --------------- Hero ---------------- */
 .hero {
@@ -69,12 +77,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .banner {
   text-align: center;
   background: rgba(235, 240, 238, 0.8);
   display: inline-block;
   padding: 2rem;
 }
+
 .banner-title {
   font-size: 3.4rem;
   text-transform: uppercase;
@@ -90,6 +100,7 @@ body {
   opacity: 0;
   width: 29%;
 }
+
 .banner-btn {
   padding: 1rem 3rem;
   text-transform: uppercase;
@@ -101,6 +112,7 @@ body {
   transition: var(--mainTransition);
   cursor: pointer;
 }
+
 .banner-btn:hover {
   background: transparent;
   color: rgb(138, 81, 77);
@@ -129,6 +141,7 @@ body {
 .products {
   padding: 4rem 0;
 }
+
 .section-title h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -136,6 +149,7 @@ body {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
+
 .products-center {
   width: 90vw;
   margin: 0 auto;
@@ -145,10 +159,12 @@ body {
   grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
 }
+
 .img-container {
   position: relative;
   overflow: hidden;
 }
+
 .bag-btn {
   position: absolute;
   top: 70%;
@@ -163,21 +179,26 @@ body {
   transform: translateX(101%);
   cursor: pointer;
 }
+
 .bag-btn:hover {
   color: black;
 }
+
 .fa-shopping-cart {
   margin-right: 0.5rem;
 }
+
 .img-container:hover .bag-btn {
   transform: translateX(0);
 }
+
 .product-img {
   display: block;
   width: 100%;
   min-height: 12rem;
   transition: var(--mainTransition);
 }
+
 .img-container:hover .product-img {
   opacity: 0.5;
 }
@@ -210,6 +231,7 @@ body {
   z-index: 2;
   visibility: hidden;
 }
+
 .cart {
   position: fixed;
   top: 0;
@@ -223,12 +245,15 @@ body {
   transition: var(--mainTransition);
   transform: translateX(100%);
 }
+
 .showCart {
   transform: translateX(0);
 }
+
 .transparentBcg {
   visibility: visible;
 }
+
 @media screen and (min-width: 768px) {
   .cart {
     width: 30vw;
@@ -240,12 +265,14 @@ body {
   font-size: 1.7rem;
   cursor: pointer;
 }
+
 .cart h2 {
   text-transform: capitalize;
   text-align: center;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 2rem;
 }
+
 /*---------- Cart Item -------------------- */
 .cart-item {
   display: grid;
@@ -254,31 +281,38 @@ body {
   grid-column-gap: 1.5rem;
   margin: 1.5rem 0;
 }
+
 .cart-item img {
   width: 75px;
   height: 75px;
 }
+
 .cart-item h4 {
   font-size: 0.85rem;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
+
 .cart-item h5 {
   margin: 0.5rem 0;
   letter-spacing: var(--mainSpacing);
 }
+
 .item-amount {
   text-align: center;
 }
+
 .remove-item {
   color: grey;
   cursor: pointer;
 }
+
 .fa-chevron-up,
 .fa-chevron-down {
   color: rgb(138, 81, 77);
   cursor: pointer;
 }
+
 /*---------- End of Cart Item -------------------- */
 
 .cart-footer {
@@ -286,10 +320,12 @@ body {
   letter-spacing: var(--mainSpacing);
   text-align: center;
 }
+
 .cart-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
+
 .banner-btn1,
 .banner-btn2 {
   padding: 0.5rem 0.5rem;
@@ -302,6 +338,7 @@ body {
   transition: var(--mainTransition);
   cursor: pointer;
 }
+
 .banner-btn1:hover,
 .banner-btn2:hover {
   background: transparent;
