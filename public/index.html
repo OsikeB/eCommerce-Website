@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA_Compatible" content="ie=edge" />
-    <title>Luxury Shoes</title>
 
-    <!--link to bootstrap css-->
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
-    <!---link to style.css-->
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA_Compatible" content="ie=edge" />
+  <title>Luxury Shoes</title>
+  <!--Favicon-->
+  <link rel="shortcut icon" href="favicon.ico" />
+  <!--link to bootstrap css-->
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+  <!---link to style.css-->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
 
-  <body>
-    <!--Navbar-->
-    <nav class="navbar">
-      <div class="navbar-center">
-        <span class="nav-icon">
-          <i class="fas fa-bars fa-2x"></i>
+<body>
+  <!--Navbar-->
+  <nav class="navbar">
+    <div class="navbar-center">
+      <span class="nav-icon">
+        <i class="fas fa-bars fa-2x"></i>
+      </span>
+      <div id="image"><img src="./img/logo.svg" alt="shop-logo" /></div>
+      <!--link to login page-->
+      <button id="myLogin" class="banner-btn4">Login</button>
+      <script type="text/javascript">
+        document.getElementById("myLogin").onclick = function () {
+          window.location = "/users/login";
+        };
+      </script>
+      <!--link to signup page-->
+      <button id="signUp" class="banner-btn4">Sign Up</button>
+      <script type="text/javascript">
+        document.getElementById("signUp").onclick = function () {
+          window.location = "/users/register";
+        };
+      </script>
+
+      <div class="cart-btn">
+        <span class="nav-icon ">
+          <i class="fas fa-cart-plus fa-2x"></i>
         </span>
-        <div id="image"><img src="./img/logo.svg" alt="shop-logo" /></div>
-        <!--link to login page-->
-        <button id="myLogin" class="banner-btn4">Login</button>
-        <script type="text/javascript">
-          document.getElementById("myLogin").onclick = function() {
-            window.location = "/users/login";
-          };
-        </script>
-        <!--link to signup page-->
-        <button id="signUp" class="banner-btn4">Sign Up</button>
-        <script type="text/javascript">
-          document.getElementById("signUp").onclick = function() {
-            window.location = "/users/register";
-          };
-        </script>
-  
-        <div class="cart-btn">
-          <span class="nav-icon ">
-            <i class="fas fa-cart-plus fa-2x"></i>
-          </span>
-          <div class="cart-items">0</div>
-        </div>
+        <div class="cart-items">0</div>
       </div>
-    </nav>
-    <!--end of navbar-->
-    
-    <!--hero-->
-    <header class="hero">
-      <div class="banner">
-        <h1 class="banner-title">Shoes Collections</h1>
-        <a href="#footer"><button class="banner-btn">Shop Now</button> </a>
-      </div>
-    </header>
-    <!--end of hero-->
+    </div>
+  </nav>
+  <!--end of navbar-->
 
-    <!--Products-->
-    <section class="products">
-      <div class="section-title">
-        <h2>our products</h2>
-      </div>
-      <div class="products-center">
-        <!--Single product
+  <!--hero-->
+  <header class="hero">
+    <div class="banner">
+      <h1 class="banner-title">Shoes Collections</h1>
+      <a href="#footer"><button class="banner-btn">Shop Now</button> </a>
+    </div>
+  </header>
+  <!--end of hero-->
+
+  <!--Products-->
+  <section class="products">
+    <div class="section-title">
+      <h2>our products</h2>
+    </div>
+    <div class="products-center">
+      <!--Single product
         <article class="product">
           <div class="img-container">
             <img src="./img/image1.jpeg" alt="article1" class="product-img" />
@@ -73,19 +75,19 @@
           <h4>€200</h4>
         </article>
         End of single product-->
-      </div>
-    </section>
-    <!--end of Products-->
-    <!---cart-->
-    <div class="cart-overlay">
-      <div class="cart">
-        <span class="close-cart">
-          <i class="fas fa-window-close"></i>
-        </span>
-        <h2>Your Order(s)</h2>
-        <div class="cart-content">
-          <!--cart item-->
-          <!--<div class="cart-item"
+    </div>
+  </section>
+  <!--end of Products-->
+  <!---cart-->
+  <div class="cart-overlay">
+    <div class="cart">
+      <span class="close-cart">
+        <i class="fas fa-window-close"></i>
+      </span>
+      <h2>Your Order(s)</h2>
+      <div class="cart-content">
+        <!--cart item-->
+        <!--<div class="cart-item"
             <img src="./img/image1.jpeg" alt="shop1" />
             <div>
               <h4>Derby</h4>
@@ -98,103 +100,101 @@
               <i class="fas fa-chevron-down"></i>
             </div>
           </div> -->
-          <!--end of cart item--->
-        </div>
-        <div class="cart-footer">
-          <h3>Your total is: € <span class="cart-total">0</span></h3>
+        <!--end of cart item--->
+      </div>
+      <div class="cart-footer">
+        <h3>Your total is: € <span class="cart-total">0</span></h3>
 
-          <div id="paypal-button"></div>
+        <div id="paypal-button"></div>
 
-          <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+        <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
-          <!---Paypal checkout integration-->
-          <script>
-            paypal.Button.render(
-              {
-                // Configure environment
-                env: "sandbox",
-                client: {
-                  sandbox: "ARo9rEqUQbawz1RegisGckwWKTAuK6599pm4trBt_XZhPJa-zlRFlFXt3Hw2vx1pLLcRVQ5LVHKSd6tN",
-                     //SANDBOX API CREDENTIALS gotten from my client ID
-                  production: "demo_production_client_id"
-                },
-                // Customize button (optional)
-                locale: "en_US",
-                style: {
-                  size: "small",
-                  color: "silver",
-                  shape: "rect"
-                },
-
-                // Enable Pay Now checkout flow (optional)
-                commit: true,
-
-                // Set up a payment
-                payment: function(data, actions) {
-                  return actions.payment.create({
-                    transactions: [
-                      {
-                        amount: {
-                          total: cartTotal.innerText, //total payable amount at checkout
-                          currency: "EUR"
-                        }
-                      }
-                    ]
-                  });
-                },
-                // Execute the payment
-                onAuthorize: function(data, actions) {
-                  return actions.payment.execute().then(function() {
-                    // Show a confirmation message to the buyer
-                    window.alert("Thank you for your purchase!");
-                  });
-                }
+        <!---Paypal checkout integration-->
+        <script>
+          paypal.Button.render({
+              // Configure environment
+              env: "sandbox",
+              client: {
+                sandbox: "ARo9rEqUQbawz1RegisGckwWKTAuK6599pm4trBt_XZhPJa-zlRFlFXt3Hw2vx1pLLcRVQ5LVHKSd6tN",
+                //SANDBOX API CREDENTIALS gotten from my client ID
+                production: "demo_production_client_id"
               },
-              "#paypal-button"
-            );
-          </script>
+              // Customize button (optional)
+              locale: "en_US",
+              style: {
+                size: "small",
+                color: "silver",
+                shape: "rect"
+              },
 
-          <button class="check-out banner-btn2">Check Out</button>
+              // Enable Pay Now checkout flow (optional)
+              commit: true,
 
-          <button class="clear-cart banner-btn1">Clear Cart</button>
+              // Set up a payment
+              payment: function (data, actions) {
+                return actions.payment.create({
+                  transactions: [{
+                    amount: {
+                      total: cartTotal.innerText, //total payable amount at checkout
+                      currency: "EUR"
+                    }
+                  }]
+                });
+              },
+              // Execute the payment
+              onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                  // Show a confirmation message to the buyer
+                  window.alert("Thank you for your purchase!");
+                });
+              }
+            },
+            "#paypal-button"
+          );
+        </script>
+
+        <button class="check-out banner-btn2">Check Out</button>
+
+        <button class="clear-cart banner-btn1">Clear Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!---end of cart-->
+
+  <footer id="footer" class="bg-dark py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center ">
+          <a href="https://www.facebook.com/" target="_blank" class="btn">
+            <i class="fab fa-facebook fa-3x text-warning m-2"></i>
+          </a>
+          <a href="https://twitter.com/?lang=en" target="_blank" class="btn">
+            <i class="fab fa-twitter fa-3x text-warning  m-2"></i>
+          </a>
+          <a href="https://www.instagram.com/?hl=en" target="_blank" class="btn">
+            <i class="fab fa-instagram fa-3x text-warning  m-2"></i>
+          </a>
+          <a href="https://www.google.com/" target="_blank" class="btn">
+            <i class="fab fa-google fa-3x text-warning  m-2"></i>
+          </a>
         </div>
       </div>
     </div>
+  </footer>
 
-    <!---end of cart-->
+  <!-----Link for contentful, must be above script.js-->
+  <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
+  <!-----Link for Jquery-->
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <!-----Link for bootstrap-->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-----Linking javascript to index.html-->
+  <script src="script.js"></script>
+  <!--font awesome-->
+  <script src="./js/all.js"></script>
+</body>
 
-    <footer id="footer" class="bg-dark py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col text-center ">
-            <a href="https://www.facebook.com/" target="_blank" class="btn">
-              <i class="fab fa-facebook fa-3x text-warning m-2"></i>
-            </a>
-            <a href="https://twitter.com/?lang=en" target="_blank" class="btn">
-              <i class="fab fa-twitter fa-3x text-warning  m-2"></i>
-            </a>
-            <a href="https://www.instagram.com/?hl=en" target="_blank" class="btn">
-              <i class="fab fa-instagram fa-3x text-warning  m-2"></i>
-            </a>
-            <a href="https://www.google.com/" target="_blank" class="btn">
-              <i class="fab fa-google fa-3x text-warning  m-2"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-----Link for contentful, must be above script.js-->
-    <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script>
-    <!-----Link for Jquery-->
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <!-----Link for bootstrap-->
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <!-----Linking javascript to index.html-->
-    <script src="script.js"></script>
-    <!--font awesome-->
-    <script src="./js/all.js"></script>
-  </body>
 </html>
 
 <!--icons gotten from fontawesome.com & folder downloaded and actual file included in js file-->
